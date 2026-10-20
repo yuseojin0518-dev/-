@@ -1,4 +1,4 @@
-# Secrets
+# Secrets and local configuration
 .env
 .env.*
 !.env.example
@@ -10,18 +10,19 @@ __pycache__/
 venv/
 .pytest_cache/
 .mypy_cache/
+.coverage
+htmlcov/
 
-# Runtime data and personal uploads
+# Runtime data, student uploads, and logs
 app.db
-app.db-shm
-app.db-wal
+app.db-*
 *.sqlite
 *.sqlite3
 uploads/
 app.log
 logs/
 
-# Backups and local test artifacts
+# Backups and generated UI screenshots
 _backup/
 tests/shots/
 .DS_Store
