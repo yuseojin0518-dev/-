@@ -1,0 +1,27 @@
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+
+# Runtime data and personal uploads
+app.db
+app.db-shm
+app.db-wal
+*.sqlite
+*.sqlite3
+uploads/
+app.log
+logs/
+
+# Backups and local test artifacts
+_backup/
+tests/shots/
+.DS_Store
