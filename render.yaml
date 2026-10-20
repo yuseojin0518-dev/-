@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: eduspace-classroom
+    runtime: python
+    plan: free
+    region: singapore
+    branch: main
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT --worker-class gthread --workers 1 --threads 8 --timeout 120
+    healthCheckPath: /
+    autoDeploy: true
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: PYTHONUNBUFFERED
+        value: "1"
+      - key: ES_DB
+        value: /tmp/eduspace.db
+      - key: ES_UPLOADS
+        value: /tmp/eduspace-uploads
